@@ -1,0 +1,25 @@
+<div class="container col-3">
+    <h2 class="h1">Insira suas notas</h2>
+    
+    <label for="ac1">AC1</label>
+    <input id="ac1" type="text" class="form-control" [(ngModel)]="ac1">
+  
+    <label for="ac2">AC2</label>
+    <input id="ac2" type="text" class="form-control" [(ngModel)]="ac2">
+  
+    <label for="ag">AG</label>
+    <input id="ag" type="text" class="form-control" [(ngModel)]="ag">
+  
+    <label for="af">AF</label>
+    <input id="af" type="text" class="form-control" [(ngModel)]="af">
+  
+    <br>
+  
+    <button type="button" class="btn btn-primary" (click)="calcularMedia()">Calcular aprovação</button>
+    
+    <br><br>
+  
+    <h2>Situação: {{ resultado }}</h2>
+    <h2>Média: {{ media }}</h2>
+  </div>
+  

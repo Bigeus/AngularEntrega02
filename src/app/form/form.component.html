@@ -1,0 +1,110 @@
+<div class="d-flex flex-column container col-4 bg-dark align-items-center p-4 rounded">
+    <h1 class="h1 text-light mb-4">Cadastro de aluno</h1>
+
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate>
+        <!-- RA -->
+        <div class="mb-3">
+            <label class="form-label text-light" for="ra">RA</label>
+            <input 
+                [(ngModel)]="ra"
+                name="ra"
+                required
+                class="form-control"
+                [class.is-invalid]="!ra && formularioEnviado"
+                id="ra"
+                placeholder="112233"
+                type="text"
+            >
+            <div *ngIf="!ra && formularioEnviado" class="text-danger">
+                RA é obrigatório.
+            </div>
+        </div>
+
+        <!-- Nome -->
+        <div class="mb-3">
+            <label class="form-label text-light" for="nome">Nome</label>
+            <input 
+                [(ngModel)]="nome"
+                name="nome"
+                required
+                class="form-control"
+                [class.is-invalid]="!nome && formularioEnviado"
+                id="nome"
+                placeholder="João da Silva"
+                type="text"
+            >
+            <div *ngIf="!nome && formularioEnviado" class="text-danger">
+                Nome é obrigatório.
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+            <label class="form-label text-light" for="email">Email</label>
+            <input 
+                [(ngModel)]="email"
+                name="email"
+                required
+                class="form-control"
+                [class.is-invalid]="!email && formularioEnviado"
+                id="email"
+                placeholder="joao.silva@gmail.com"
+                type="email"
+            >
+            <div *ngIf="!email && formularioEnviado" class="text-danger">
+                Email é obrigatório e deve ser válido.
+            </div>
+        </div>
+
+        <!-- Celular -->
+        <div class="mb-3">
+            <label class="form-label text-light" for="celular">Celular</label>
+            <input 
+                [(ngModel)]="celular"
+                name="celular"
+                required
+                class="form-control"
+                [class.is-invalid]="!celular && formularioEnviado"
+                id="celular"
+                placeholder="(11) 2233-3444"
+                type="tel"
+            >
+            <div *ngIf="!celular && formularioEnviado" class="text-danger">
+                Celular é obrigatório.
+            </div>
+        </div>
+
+        <!-- Botão de Cadastro -->
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+
+    <!-- Toast de Erro -->
+    <div 
+      class="toast align-items-center text-white bg-danger border-0 position-fixed bottom-0 end-0 p-3" 
+      role="alert" 
+      style="z-index: 2000;"
+      [class.show]="mostrarToast"
+      [class.hide]="!mostrarToast">
+        <div class="d-flex">
+            <div class="toast-body">
+                Por favor, preencha todos os campos obrigatórios corretamente.
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" (click)="mostrarToast = false"></button>
+        </div>
+    </div>
+
+    <!-- Toast de Sucesso -->
+    <div 
+    class="toast align-items-center text-white bg-success border-0 position-fixed bottom-0 end-0 p-3" 
+    role="alert" 
+    style="z-index: 2000;"
+    [class.show]="mostrarWin"
+    [class.hide]="!mostrarWin">
+      <div class="d-flex">
+          <div class="toast-body">
+              Formulário enviado com Sucesso! 🎊
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" (click)="mostrarToast = false"></button>
+      </div>
+  </div>
+</div>
