@@ -23,7 +23,7 @@ export class CalculadoraComponent {
         this.resultado = this.numero1 * this.numero2;
         break;
       case 4: // Divisão
-        this.resultado = this.numero2 !== 0 ? this.numero1 / this.numero2 : null; // Evitar divisão por zero
+        this.resultado = this.numero2 !== 0 ? this.numero1 / this.numero2 : null;
         break;
       default:
         this.resultado = null;

@@ -1,4 +1,4 @@
-<div class="container col-3">
+<div class="container col-3 text-white">
     <h2 class="h1">Insira suas notas</h2>
     
     <label for="ac1">AC1</label>
@@ -12,7 +12,7 @@
   
     <label for="af">AF</label>
     <input id="af" type="text" class="form-control" [(ngModel)]="af">
-  
+    <!-- (EVENTOS) [VARIAVEL_DE_CLASSE] [(2-WAY-DATA-BINDING)] -->
     <br>
   
     <button type="button" class="btn btn-primary" (click)="calcularMedia()">Calcular aprovação</button>
